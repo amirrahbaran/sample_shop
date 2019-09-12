@@ -15,16 +15,6 @@ Route::get('/', 'PageController@index');
 
 Route::get('/about-us', 'PageController@aboutUs');
 
-Route::get('/products', function () {
-    $products = DB::table('products')
-        ->orderBy('name')
-        ->get();
-    return view('products.index', compact('products'));
-});
+Route::get('/products', 'ProductController@index');
 
-Route::get('/products/{id}', function ($id) {
-    $product = DB::table('products')
-        ->where('id', '=', $id)
-        ->first();
-    return view('products.show', compact('product'));
-});
+Route::get('/products/{id}', 'ProductController@show');

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
+use Illuminate\Http\Request;
 
 class ProductController extends Controller
 {
@@ -23,8 +24,10 @@ class ProductController extends Controller
         return view('products.create');
     }
 
-    public function store()
+    public function store(Request $request)
     {
-        dd('store');
+        dd($request->get('name'));
+        dd($request->except('_token'));
+        dd($request->all());
     }
 }

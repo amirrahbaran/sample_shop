@@ -5,6 +5,12 @@
         {{$product->name}}
     </h1>
     <p>
-        {{$product->description}}
+        description: {{$product->description}}
+    </p>
+    <p>
+        price: {{$product->price}}
+    </p>
+    <p>
+        weight: {{$product->weight}}
     </p>
 @endsection

@@ -25,7 +25,7 @@
                         <label for="price">Price</label>
                         <input type="number" class="form-control" id="price" name="price" placeholder="Enter product price">
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-success">Save</button>
                 </form>
             </div>
         </div>

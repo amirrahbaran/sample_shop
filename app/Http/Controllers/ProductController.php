@@ -26,8 +26,7 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
-        dd($request->get('name'));
-        dd($request->except('_token'));
-        dd($request->all());
+        $product = Product::create($request->except('_token'));
+        dd($product->toArray());
     }
 }

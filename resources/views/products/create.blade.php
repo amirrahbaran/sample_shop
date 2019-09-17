@@ -1,6 +1,8 @@
 @extends('layouts.app')
 
 @section('content')
+@include('shared.errors')
+
     <div class="card">
         <div class="card-body">
 
@@ -34,8 +36,6 @@
                         <input type="number" class="form-control" id="price" name="price" value="{{ old('price') }}" placeholder="Enter product price">
                     </div>
 
-                    @include('shared.errors')
-                    
                     <button type="submit" class="btn btn-success">Save</button>
 
                 </form>

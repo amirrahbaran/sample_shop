@@ -24,10 +24,22 @@ class StoreProductPost extends FormRequest
     public function rules()
     {
         return [
-            'name'          => 'required|string',
-            'price'         => 'required|numeric',
-            'weight'        => 'required|numeric',
-            'description'   => 'required|string'
+            'name'          => [
+                'required',
+                'string',
+            ],
+            'price'         => [
+                'required', 
+                'numeric',
+            ],
+            'weight'        => [
+                'required',
+                'numeric',
+            ],
+            'description'   => [
+                'required',
+                'string',
+            ],
         ];
     }
 }

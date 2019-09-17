@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Product;
-use Illuminate\Http\Request;
+use App\Http\Requests\StoreProductPost;
 
 class ProductController extends Controller
 {
@@ -24,14 +24,9 @@ class ProductController extends Controller
         return view('products.create');
     }
 
-    public function store(Request $request)
+    public function store(StoreProductPost $request)
     {
-        $request->validate([
-            'name'          => 'required',
-            'price'         => 'required|numeric',
-            'weight'        => 'required|numeric',
-            'description'   => 'required'
-        ]);
+        $request->validated();
 
         $product = Product::create($request->except('_token'));
         dd($product->toArray());

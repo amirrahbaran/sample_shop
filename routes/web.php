@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', 'PageController@index');
+Route::get('/', function(){
+    return redirect()->route('products.index');
+});
 
-Route::get('/about-us', 'PageController@aboutUs');
+Route::get('/products', 'ProductController@index')->name('products.index');
 
-Route::get('/products', 'ProductController@index');
-
-Route::get('/products/create', 'ProductController@create');
+Route::get('/products/create', 'ProductController@create')->name('products.create');
 
 Route::get('/products/{id}', 'ProductController@show');
 

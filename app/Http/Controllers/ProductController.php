@@ -7,6 +7,11 @@ use App\Http\Requests\StoreProductPost;
 
 class ProductController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth')->only('create');
+    }
+
     public function index()
     {
         $products = Product::all();

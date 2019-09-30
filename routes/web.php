@@ -22,3 +22,7 @@ Route::get('/products/create', 'ProductController@create');
 Route::get('/products/{id}', 'ProductController@show');
 
 Route::post('/products', 'ProductController@store')->name('products.store');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

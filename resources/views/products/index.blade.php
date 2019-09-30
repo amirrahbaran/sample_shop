@@ -5,8 +5,11 @@
         @foreach($products as $product)
             <div>
                 <a href="products/{{$product->id}}">
-                {{$product->name}}
+                    {{$product->name}}
                 </a>
+                <p>
+                    creator: {{$product->user->name}}
+                </p>
             </div>
         @endforeach
     </div>

@@ -14,6 +14,9 @@
         <p>
             weight: {{$product->weight}}
         </p>
+        <p>
+            owner: {{$product->user->name}}
+        </p>
 
         <div>
             <a href="{{ route('products.index') }}">Return to index</a>

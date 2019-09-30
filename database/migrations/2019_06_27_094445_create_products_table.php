@@ -16,11 +16,18 @@ class CreateProductsTable extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->char('name');
+            $table->unsignedInteger('user_id');
             $table->integer('price');
             $table->integer('weight');
             $table->text('description');
             $table->dateTime('created_at');
             $table->dateTime('updated_at');
+
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 

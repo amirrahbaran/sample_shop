@@ -13,8 +13,7 @@
 
                     <form method="POST" action="{{ route('products.store') }}">
 
-                        {{ csrf_field() }}
-
+                        @csrf
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" class="form-control" id="name" name="name" value="{{ old('name') }}" placeholder="Enter product name">

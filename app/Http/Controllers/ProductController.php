@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use App\Http\Requests\StoreProductPost;
+use Auth;
 
 class ProductController extends Controller
 {
@@ -32,8 +33,7 @@ class ProductController extends Controller
     public function store(StoreProductPost $request)
     {
         $request->validated();
-
-        $product = Product::create($request->except('_token'));
-        dd($product->toArray());
+        Auth::user()->products()->create($request->except('_token'));
+        return redirect(route('products.index'));
     }
 }

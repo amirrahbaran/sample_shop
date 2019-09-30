@@ -23,3 +23,7 @@ Vagrantfile
 # DevEnvironment
 .idea
 .vagrant
+
+# OS File Explorer
+# Dolphine KDE Linux 
+.directory

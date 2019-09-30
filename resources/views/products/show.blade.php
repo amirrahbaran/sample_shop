@@ -14,5 +14,10 @@
         <p>
             weight: {{$product->weight}}
         </p>
+
+        <div>
+            <a href="{{ route('products.index') }}">Return to index</a>
+        </div>
+
     </div>
 @endsection

@@ -22,6 +22,7 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::findOrFail($id);
+        dd($product->toArray());
         return view('products.show', compact('product'));
     }
 

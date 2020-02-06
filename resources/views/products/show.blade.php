@@ -17,6 +17,12 @@
         <p>
             owner: {{$product->user->name}}
         </p>
+        <p>
+            categories:
+            @foreach($product->categories as $category)
+                {{$category->name . ','}}
+            @endforeach
+        </p>
 
         <div>
             <a href="{{ route('products.index') }}">Return to index</a>

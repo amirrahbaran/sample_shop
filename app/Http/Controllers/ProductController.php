@@ -22,10 +22,6 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::with('categories')->findOrFail($id);
-        foreach ($product->categories as $category) {
-            dump($category->tag->created_at);
-        }
-        dd();
         return view('products.show', compact('product'));
     }
 
